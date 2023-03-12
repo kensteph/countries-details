@@ -1,7 +1,10 @@
 import React from 'react';
+import Search from '../components/Search';
 
 const Home = () => (
-  <div>Home</div>
+  <>
+    <Search />
+  </>
 );
 
 export default Home;

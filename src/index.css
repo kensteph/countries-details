@@ -6,8 +6,13 @@
   padding: 0;
 }
 
+:root {
+  --bg--color: rgb(228, 90, 136);
+  --light-dark-bg: rgba(21, 21, 21, 0.059);
+}
+
 body {
-  background-color: rgb(228, 90, 136);
+  background-color: var(--bg--color);
   font-family: 'Lato', sans-serif;
 }
 
@@ -15,12 +20,14 @@ body {
   font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;
 }
 
+/* ===================== HEADER SECTION ============================ */
+
 header {
   color: white;
   display: flex;
   padding: 1rem;
   justify-content: space-between;
-  background-color: rgba(21, 21, 21, 0.059);
+  background-color: var(--light-dark-bg);
 }
 
 .icon {
@@ -47,4 +54,24 @@ header {
 .block3 {
   display: flex;
   gap: 1rem;
+}
+
+/* ======================= SEARCH COMPONENT ======================= */
+
+.searchContainer {
+  display: flex;
+  background-color: var(--light-dark-bg);
+}
+
+input {
+  flex: 1;
+  padding: 1rem;
+  color: white;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
+input::placeholder {
+  color: white;
 }

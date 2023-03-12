@@ -1,7 +1,9 @@
 import React from 'react';
 
 const Search = () => (
-  <div>Search</div>
+  <div className="searchContainer">
+    <input type="text" placeholder="Search a country..." />
+  </div>
 );
 
 export default Search;
