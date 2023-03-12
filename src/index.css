@@ -75,3 +75,31 @@ input {
 input::placeholder {
   color: white;
 }
+
+/* MOST SERACH COMPONENT */
+.mostSearchContainer {
+  display: flex;
+  color: white;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.flag {
+  width: 10rem;
+}
+
+.searchStats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.country {
+  font-size: 1.2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.nbViews {
+  font-size: 0.7rem;
+}
