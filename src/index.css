@@ -103,3 +103,25 @@ input::placeholder {
 .nbViews {
   font-size: 0.7rem;
 }
+
+/* COUNTRY COMPONENT */
+
+.countryCard {
+  position: relative;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+.floatIcon {
+  position: absolute;
+  right: 0;
+  color: white;
+}
+
+.countryInfo {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: end;
+}
