@@ -6,7 +6,7 @@ const Country = ({ className, country }) => (
     <span className="material-symbols-outlined floatIcon">
       arrow_circle_right
     </span>
-    <img width="100%" height="100rem" src={country.flag} alt="Flag" />
+    <img className="countryCardImg" src={country.flag} alt="Flag" />
     <article className="countryInfo">
       <span className="country">{country.name}</span>
       <span className="nbViews">11,000</span>

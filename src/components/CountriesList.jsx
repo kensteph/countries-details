@@ -24,32 +24,47 @@ const CountriesList = () => {
       flag: 'https://flagcdn.com/w320/td.png',
     },
     {
-      id: 22,
+      id: 212,
       name: 'Spain',
       flag: 'https://flagcdn.com/w320/hu.png',
     },
     {
-      id: 22,
+      id: 252,
       name: 'Vietnam',
       flag: 'https://flagcdn.com/w320/vn.png',
     },
     {
-      id: 22,
+      id: 223,
       name: 'Egypt',
       flag: 'https://flagcdn.com/w320/eg.png',
     },
     {
-      id: 22,
+      id: 232,
       name: 'Tokelau',
       flag: 'https://flagcdn.com/w320/tk.png',
     },
   ];
-
+  let select = 1;
+  let selectCount = 0;
+  let bg = '';
   return (
     <div className="listContainer">
-      {countries.map((country) => (
-        <Country key={country.id} country={country} />
-      ))}
+      {countries.map((country, index) => {
+        if (index === select) {
+          bg = 'bg';
+          selectCount += 1;
+          // Next select
+          if (selectCount === 2) {
+            select = index + 3;
+            selectCount = 0;
+          } else {
+            select = index + 1;
+          }
+        } else {
+          bg = '';
+        }
+        return <Country key={country.id} className={bg} country={country} />;
+      })}
     </div>
   );
 };
