@@ -119,6 +119,13 @@ input::placeholder {
   flex-direction: column;
 }
 
+.countryCardDetails {
+  position: relative;
+  width: 49%;
+  display: flex;
+  flex-direction: row;
+}
+
 .countryCardImg {
   width: 100%;
   height: 10rem;
@@ -162,4 +169,27 @@ input::placeholder {
 .row {
   display: flex;
   gap: 1rem;
+}
+
+/* DETAILS PAGE */
+.detailsContainer {
+  color: white;
+}
+
+.rowDetail {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.rowDetail:nth-child(odd) {
+  background-color: var(--light-dark-bg);
+}
+
+.titleDetail {
+  font-size: 1.2rem;
+}
+
+.titleDetailInfo {
+  font-size: 1rem;
 }

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Country = ({ className, country }) => (
   <div className={`countryCard ${className}`}>
-    <Link to="/details">
+    <Link to="/details" state={country}>
       <span className="material-symbols-outlined floatIcon">
         arrow_circle_right
       </span>

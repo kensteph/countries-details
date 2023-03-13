@@ -1,16 +1,38 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-const MostSearch = () => (
-  <Link to="/details">
+const MostSearch = ({ country }) => {
+  const location = useLocation();
+  const currentLocation = location.pathname;
+
+  if (currentLocation === '/') {
+    return (
+      <Link to="/details" state={country}>
+        <div className="mostSearchContainer">
+          <img className="flag" src={country.flag} alt="Flag" />
+          <article className="searchStats">
+            <span className="country">{country.name}</span>
+            <span className="nbViews">
+              {`${country.views} views`}
+            </span>
+          </article>
+        </div>
+      </Link>
+    );
+  }
+  return (
     <div className="mostSearchContainer">
-      <img className="flag" src="https://flagcdn.com/w320/bw.png" alt="Flag" />
+      <img className="flag" src={country.flag} alt="Flag" />
       <article className="searchStats">
-        <span className="country">Botswana</span>
-        <span className="nbViews">3 views</span>
+        <span className="country">{country.name}</span>
+        <span className="nbViews">
+          {`${country.views} views`}
+        </span>
       </article>
     </div>
-  </Link>
-);
+  );
+};
 
+MostSearch.propTypes = { country: PropTypes.shape().isRequired };
 export default MostSearch;
