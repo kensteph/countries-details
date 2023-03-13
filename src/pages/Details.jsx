@@ -5,7 +5,6 @@ import MostSearch from '../components/MostSearch';
 const Details = () => {
   const currentLocation = useLocation();
   const countryToDisplay = currentLocation.state;
-  console.log(countryToDisplay);
   return (
     <div className="detailsContainer">
       <MostSearch country={countryToDisplay} />
