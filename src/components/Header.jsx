@@ -1,9 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => (
   <header>
     <article className="block1">
-      <span className="material-symbols-outlined icon">arrow_back_ios</span>
+      <Link to="/">
+        <span className="material-symbols-outlined icon">arrow_back_ios</span>
+      </Link>
       <span className="year">2023</span>
     </article>
     <article className="block2">
