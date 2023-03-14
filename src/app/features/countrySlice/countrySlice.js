@@ -67,7 +67,12 @@ const initialState = { countries: dummyCountries, isLoading: false };
 const countrySlice = createSlice({
   initialState,
   name: 'Countries',
-  reducers: {},
+  reducers: {
+    viewed: (state, action) => {
+      console.log(action);
+    },
+  },
 });
 
+export const { viewed } = countrySlice.actions;
 export default countrySlice.reducer;
