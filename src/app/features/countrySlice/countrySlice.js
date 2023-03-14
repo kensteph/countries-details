@@ -66,10 +66,16 @@ const initialState = { countries: dummyCountries, isLoading: false };
 
 const countrySlice = createSlice({
   initialState,
-  name: 'Countries',
+  name: 'countries',
   reducers: {
     viewed: (state, action) => {
-      console.log(action);
+      const newState = state.countries.map((country) => {
+        if (country.name === action.payload) {
+          return { ...country, views: country.views + 1 };
+        }
+        return country;
+      });
+      return { ...state, countries: newState };
     },
   },
 });

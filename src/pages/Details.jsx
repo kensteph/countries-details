@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { viewed } from '../app/features/countrySlice/countrySlice';
@@ -8,7 +8,10 @@ const Details = () => {
   const currentLocation = useLocation();
   const countryToDisplay = currentLocation.state;
   const dispatch = useDispatch();
-  dispatch(viewed(countryToDisplay.name));
+  useEffect(() => {
+    dispatch(viewed(countryToDisplay.name));
+  }, [countryToDisplay.name, dispatch]);
+
   return (
     <div className="detailsContainer">
       <MostSearch country={countryToDisplay} />
