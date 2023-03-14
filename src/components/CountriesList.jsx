@@ -1,51 +1,10 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import Country from './Country';
 import Search from './Search';
 
 const CountriesList = () => {
-  const countries = [
-    {
-      id: 1,
-      name: 'Montserrat',
-      official: 'xxxx',
-      flag: 'https://flagcdn.com/w320/ms.png',
-    },
-    {
-      id: 2,
-      name: 'British Virgin Islands',
-      flag: 'https://flagcdn.com/w320/cd.png',
-    },
-    {
-      id: 11,
-      name: 'Belize',
-      flag: 'https://flagcdn.com/w320/bz.png',
-    },
-    {
-      id: 15,
-      name: 'Chad',
-      flag: 'https://flagcdn.com/w320/td.png',
-    },
-    {
-      id: 212,
-      name: 'Spain',
-      flag: 'https://flagcdn.com/w320/hu.png',
-    },
-    {
-      id: 252,
-      name: 'Vietnam',
-      flag: 'https://flagcdn.com/w320/vn.png',
-    },
-    {
-      id: 223,
-      name: 'Egypt',
-      flag: 'https://flagcdn.com/w320/eg.png',
-    },
-    {
-      id: 232,
-      name: 'Tokelau',
-      flag: 'https://flagcdn.com/w320/tk.png',
-    },
-  ];
+  const countries = useSelector((store) => store.countries.countries);
   let select = 1;
   let selectCount = 0;
   let bg = '';
@@ -75,7 +34,7 @@ const CountriesList = () => {
           } else {
             bg = '';
           }
-          return <Country key={country.id} className={bg} country={country} />;
+          return <Country key={country.name} className={bg} country={country} />;
         })}
       </div>
     </div>
