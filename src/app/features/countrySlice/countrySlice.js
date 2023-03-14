@@ -1,5 +1,8 @@
 /* eslint-disable no-param-reassign */
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
+
+const baseUrl = 'https://restcountries.com/v3.1/all';
 
 const dummyCountries = [
   {
@@ -73,6 +76,18 @@ const initialState = {
   isLoading: false,
 };
 
+export const getCountriesFromAPI = createAsyncThunk(
+  'countries/getCountries',
+  async (thunkAPI) => {
+    try {
+      const resp = await axios(baseUrl);
+      return resp.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue('something went wrong');
+    }
+  },
+);
+
 const countrySlice = createSlice({
   initialState,
   name: 'countries',
@@ -92,6 +107,18 @@ const countrySlice = createSlice({
       const country = sortedCountries[0];
       state.mustViewed = country;
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(getCountriesFromAPI.pending, (state) => {
+      state.isLoading = true;
+    })
+      .addCase(getCountriesFromAPI.fulfilled, (state, action) => {
+        console.log(action);
+        state.isLoading = false;
+      })
+      .addCase(getCountriesFromAPI.rejected, (state) => {
+        state.isLoading = false;
+      });
   },
 });
 
