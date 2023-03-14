@@ -11,7 +11,7 @@ const Country = ({ className, country }) => (
       <img className="countryCardImg" src={country.flag} alt="Flag" />
       <article className="countryInfo">
         <span className="country">{country.name}</span>
-        <span className="nbViews">11,000</span>
+        <span className="tld">{country.tld}</span>
       </article>
     </Link>
   </div>

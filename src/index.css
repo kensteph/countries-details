@@ -115,7 +115,7 @@ input::placeholder {
 .countryCard {
   position: relative;
   width: 49%;
-  height: 17rem;
+  height: 15rem;
   display: flex;
   flex-direction: column;
 }
@@ -130,8 +130,8 @@ input::placeholder {
 .countryCardImg {
   width: 100%;
   height: 10rem;
-  -webkit-filter: grayscale(50%);
-  filter: grayscale(50%);
+  -webkit-filter: grayscale(95%);
+  filter: grayscale(95%);
 }
 
 .bg {
@@ -151,8 +151,11 @@ input::placeholder {
   flex-direction: column;
   color: white;
   padding: 1rem;
-  align-items: end;
   text-align: right;
+}
+
+.tld {
+  text-transform: uppercase;
 }
 
 /* COUNTRIESLIST COMPONENT */
@@ -161,10 +164,8 @@ input::placeholder {
   display: flex;
   padding: 0.5rem;
   margin-top: 1rem;
-  gap: 0.2rem;
+  gap: 0.1rem;
   flex-wrap: wrap;
-  height: calc(100vh - 11rem);
-  overflow-y: scroll;
 }
 
 .row {
@@ -179,7 +180,6 @@ input::placeholder {
 
 .countryDetails {
   overflow-y: scroll;
-  height: calc(100vh - 11rem);
 }
 
 .rowDetail {

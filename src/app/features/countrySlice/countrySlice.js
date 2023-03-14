@@ -15,7 +15,8 @@ const dummyCountries = [
     area: 27750,
     population: 11402533,
     flag: 'https://flagcdn.com/w320/ht.png',
-    views: 2,
+    views: 0,
+    tld: 'ht',
   },
   {
     name: 'France',
@@ -29,8 +30,9 @@ const dummyCountries = [
     latlong: '19,-72.4666666',
     area: 27750,
     population: 11402533,
-    flag: 'https://flagcdn.com/w320/ht.png',
-    views: 2,
+    flag: 'https://flagcdn.com/w320/fr.png',
+    views: 0,
+    tld: 'fr',
   },
   {
     name: 'Canada',
@@ -44,8 +46,9 @@ const dummyCountries = [
     latlong: '19,-72.4666666',
     area: 27750,
     population: 11402533,
-    flag: 'https://flagcdn.com/w320/ht.png',
-    views: 2,
+    flag: 'https://flagcdn.com/w320/ca.png',
+    views: 0,
+    tld: 'ca',
   },
   {
     name: 'USA',
@@ -59,8 +62,9 @@ const dummyCountries = [
     latlong: '19,-72.4666666',
     area: 27750,
     population: 11402533,
-    flag: 'https://flagcdn.com/w320/ht.png',
-    views: 2,
+    flag: 'https://flagcdn.com/w320/us.png',
+    views: 0,
+    tld: 'us',
   },
 ];
 const initialState = {
