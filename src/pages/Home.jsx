@@ -11,7 +11,7 @@ const Home = () => {
   const defaultCountry = useSelector((store) => store.countries.mustViewed);
   return (
     <>
-      <MostSearch country={defaultCountry} />
+      {defaultCountry && <MostSearch country={defaultCountry} />}
       <CountriesList />
     </>
   );

@@ -129,7 +129,7 @@ input::placeholder {
 
 .countryCardImg {
   width: 100%;
-  height: 10rem;
+  height: 7rem;
   -webkit-filter: grayscale(95%);
   filter: grayscale(95%);
 }
@@ -198,4 +198,65 @@ input::placeholder {
 
 .titleDetailInfo {
   font-size: 1rem;
+}
+
+/* RESPONSIVENESS */
+
+@media only screen and (min-width: 600px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ======================= SEARCH COMPONENT ======================= */
+
+  header {
+    width: 100rem;
+  }
+
+  .searchContainer {
+    align-self: center;
+    width: 30rem;
+  }
+
+  /* COUNTRIESLIST COMPONENT */
+
+  .mainContainer {
+    width: 100rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .listContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  /* COUNTRY COMPONENT */
+
+  .countryCard {
+    position: relative;
+    width: 30%;
+    height: 20rem;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .countryCardDetails {
+    position: relative;
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .countryCardImg {
+    width: 100%;
+    height: 15rem;
+    -webkit-filter: grayscale(95%);
+    filter: grayscale(95%);
+  }
 }

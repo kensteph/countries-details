@@ -4,75 +4,9 @@ import axios from 'axios';
 
 const baseUrl = 'https://restcountries.com/v3.1/all';
 
-const dummyCountries = [
-  {
-    name: 'Haiti',
-    official: 'Republic of Haiti',
-    currency: 'HTG',
-    capital: 'Port-au-Prince',
-    region: 'Americas',
-    subregion: 'Caribbean',
-    continents: 'North America',
-    languages: 'French,Haitian Creole',
-    latlong: '19,-72.4666666',
-    area: 27750,
-    population: 11402533,
-    flag: 'https://flagcdn.com/w320/ht.png',
-    views: 0,
-    tld: 'ht',
-  },
-  {
-    name: 'France',
-    official: 'Republic of Haiti',
-    currency: 'HTG',
-    capital: 'Port-au-Prince',
-    region: 'Americas',
-    subregion: 'Caribbean',
-    continents: 'North America',
-    languages: 'French,Haitian Creole',
-    latlong: '19,-72.4666666',
-    area: 27750,
-    population: 11402533,
-    flag: 'https://flagcdn.com/w320/fr.png',
-    views: 0,
-    tld: 'fr',
-  },
-  {
-    name: 'Canada',
-    official: 'Republic of Haiti',
-    currency: 'HTG',
-    capital: 'Port-au-Prince',
-    region: 'Americas',
-    subregion: 'Caribbean',
-    continents: 'North America',
-    languages: 'French,Haitian Creole',
-    latlong: '19,-72.4666666',
-    area: 27750,
-    population: 11402533,
-    flag: 'https://flagcdn.com/w320/ca.png',
-    views: 0,
-    tld: 'ca',
-  },
-  {
-    name: 'USA',
-    official: 'Republic of Haiti',
-    currency: 'HTG',
-    capital: 'Port-au-Prince',
-    region: 'Americas',
-    subregion: 'Caribbean',
-    continents: 'North America',
-    languages: 'French,Haitian Creole',
-    latlong: '19,-72.4666666',
-    area: 27750,
-    population: 11402533,
-    flag: 'https://flagcdn.com/w320/us.png',
-    views: 0,
-    tld: 'us',
-  },
-];
 const initialState = {
-  countries: dummyCountries,
-  mustViewed: dummyCountries[0],
+  countries: [],
+  mustViewed: null,
   isLoading: false,
 };
 
@@ -109,12 +43,42 @@ const countrySlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(getCountriesFromAPI.pending, (state) => {
-      state.isLoading = true;
-    })
+    builder
+      .addCase(getCountriesFromAPI.pending, (state) => {
+        state.isLoading = true;
+      })
       .addCase(getCountriesFromAPI.fulfilled, (state, action) => {
-        console.log(action);
         state.isLoading = false;
+        const cList = [];
+        action.payload.forEach((country) => {
+          const languages = country.languages
+            ? Object.values(country.languages)
+            : [];
+          const { tld } = country;
+          const tldd = tld ? tld[0] : '';
+
+          const countryObj = {
+            name: country.name.common,
+            official: country.name.official,
+            currency: country.name.common,
+            capital: country.capital,
+            region: country.region,
+            subregion: country.subregion,
+            continents: country.continents,
+            languages: languages.join(','),
+            latlong: country.latlng.join(' , '),
+            area: country.area,
+            population: country.population,
+            flag: country.flags.png,
+            views: 0,
+            tld: tldd,
+          };
+          cList.push(countryObj);
+        });
+
+        state.countries = cList;
+        const defaultObj = cList[0];
+        state.mustViewed = defaultObj;
       })
       .addCase(getCountriesFromAPI.rejected, (state) => {
         state.isLoading = false;

@@ -1,10 +1,18 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCountriesFromAPI } from '../app/features/countrySlice/countrySlice';
 import Country from './Country';
 import Search from './Search';
 
 const CountriesList = () => {
+  const dispatch = useDispatch();
   const countries = useSelector((store) => store.countries.countries);
+  useEffect(() => {
+    if (countries.length === 0) {
+      dispatch(getCountriesFromAPI());
+    }
+  }, [countries.length, dispatch]);
+
   let select = 1;
   let selectCount = 0;
   let bg = '';
@@ -17,7 +25,7 @@ const CountriesList = () => {
   };
   result = countries.filter((country) => country.name.toLowerCase().includes(searchCountry));
   return (
-    <div>
+    <div className="mainContainer">
       <Search handleSearch={handleSearch} />
       <div className="listContainer">
         {result.map((country, index) => {
@@ -34,7 +42,9 @@ const CountriesList = () => {
           } else {
             bg = '';
           }
-          return <Country key={country.name} className={bg} country={country} />;
+          return (
+            <Country key={country.name} className={bg} country={country} />
+          );
         })}
       </div>
     </div>

@@ -61,7 +61,7 @@ const Details = () => {
           <span className="titleDetailInfo">{countryToDisplay.population}</span>
         </li>
         <li className="rowDetail">
-          <span className="titleDetail">TLD</span>
+          <span className="titleDetail">Tld</span>
           <span className="titleDetailInfo">{countryToDisplay.tld}</span>
         </li>
       </ul>
