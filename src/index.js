@@ -7,6 +7,8 @@ import {
   Route,
   RouterProvider,
 } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './app/store';
 import App from './App';
 import RootLayout from './layouts/RootLayout';
 import Details from './pages/Details';
@@ -22,9 +24,9 @@ const router = createBrowserRouter(
   ),
 );
 root.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <RouterProvider router={router}>
       <App />
     </RouterProvider>
-  </React.StrictMode>,
+  </Provider>,
 );

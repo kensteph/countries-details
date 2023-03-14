@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+import { viewed } from '../app/features/countrySlice/countrySlice';
 import MostSearch from '../components/MostSearch';
 
 const Details = () => {
   const currentLocation = useLocation();
   const countryToDisplay = currentLocation.state;
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(viewed(countryToDisplay.name));
+  }, [countryToDisplay.name, dispatch]);
+
   return (
     <div className="detailsContainer">
       <MostSearch country={countryToDisplay} />
@@ -52,6 +59,10 @@ const Details = () => {
         <li className="rowDetail">
           <span className="titleDetail">Population</span>
           <span className="titleDetailInfo">{countryToDisplay.population}</span>
+        </li>
+        <li className="rowDetail">
+          <span className="titleDetail">Tld</span>
+          <span className="titleDetailInfo">{countryToDisplay.tld}</span>
         </li>
       </ul>
     </div>
