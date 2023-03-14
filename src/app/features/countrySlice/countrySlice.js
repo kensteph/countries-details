@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
 
 const dummyCountries = [
@@ -62,7 +63,11 @@ const dummyCountries = [
     views: 2,
   },
 ];
-const initialState = { countries: dummyCountries, isLoading: false };
+const initialState = {
+  countries: dummyCountries,
+  mustViewed: dummyCountries[0],
+  isLoading: false,
+};
 
 const countrySlice = createSlice({
   initialState,
@@ -77,8 +82,14 @@ const countrySlice = createSlice({
       });
       return { ...state, countries: newState };
     },
+    getMustViewed: (state) => {
+      // Sort the countries by must viewed
+      const sortedCountries = state.countries.sort((a, b) => b.views - a.views);
+      const country = sortedCountries[0];
+      state.mustViewed = country;
+    },
   },
 });
 
-export const { viewed } = countrySlice.actions;
+export const { viewed, getMustViewed } = countrySlice.actions;
 export default countrySlice.reducer;
