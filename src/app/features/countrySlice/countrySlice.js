@@ -56,12 +56,18 @@ const countrySlice = createSlice({
             : [];
           const { tld } = country;
           const tldd = tld ? tld[0] : '';
+          let currency = country.currencies;
+          currency = currency ? Object.values(currency) : [];
+          const cName = currency[0]?.name || '';
+          const cSymbol = currency[0]?.symbol || '';
+          currency = `${cName} (${cSymbol})`;
+          if (currency.trim().length === 2) { currency = 'N/A'; }
 
           const countryObj = {
             name: country.name.common,
             official: country.name.official,
-            currency: country.name.common,
-            capital: country.capital,
+            currency,
+            capital: country.capital || 'N/A',
             region: country.region,
             subregion: country.subregion,
             continents: country.continents,
@@ -73,6 +79,7 @@ const countrySlice = createSlice({
             views: 0,
             tld: tldd,
           };
+          console.log(countryObj);
           cList.push(countryObj);
         });
 
