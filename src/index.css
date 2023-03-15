@@ -53,6 +53,7 @@ a {
 }
 
 .title {
+  font-size: 1.2rem;
   color: rgb(193, 180, 180);
   font-weight: 500;
 }
@@ -204,6 +205,12 @@ input::placeholder {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .title {
+    font-size: 2rem;
+    color: rgb(193, 180, 180);
+    font-weight: 500;
   }
 
   /* ======================= SEARCH COMPONENT ======================= */
