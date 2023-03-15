@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { viewed } from '../app/features/countrySlice/countrySlice';
+import { viewed } from '../redux/features/countrySlice/countrySlice';
 import MostSearch from '../components/MostSearch';
 
 const Details = () => {

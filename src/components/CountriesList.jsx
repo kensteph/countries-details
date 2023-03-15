@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCountriesFromAPI } from '../app/features/countrySlice/countrySlice';
+import { getCountriesFromAPI } from '../redux/features/countrySlice/countrySlice';
 import Country from './Country';
 import Search from './Search';
 
@@ -12,10 +12,6 @@ const CountriesList = () => {
       dispatch(getCountriesFromAPI());
     }
   }, [countries.length, dispatch]);
-
-  let select = 1;
-  let selectCount = 0;
-  let bg = '';
   const [searchCountry, setSearchCountry] = useState('');
   let result = countries;
 
@@ -28,24 +24,9 @@ const CountriesList = () => {
     <div className="mainContainer">
       <Search handleSearch={handleSearch} />
       <div className="listContainer">
-        {result.map((country, index) => {
-          if (index === select) {
-            bg = 'bg';
-            selectCount += 1;
-            // Next select
-            if (selectCount === 2) {
-              select = index + 3;
-              selectCount = 0;
-            } else {
-              select = index + 1;
-            }
-          } else {
-            bg = '';
-          }
-          return (
-            <Country key={country.name} className={bg} country={country} />
-          );
-        })}
+        {result.map((country) => (
+          <Country key={country.name} country={country} />
+        ))}
       </div>
     </div>
   );
