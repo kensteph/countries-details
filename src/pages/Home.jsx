@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getMustViewed } from '../app/features/countrySlice/countrySlice';
+import { getMustViewed } from '../redux/features/countrySlice/countrySlice';
 import CountriesList from '../components/CountriesList';
 import MostSearch from '../components/MostSearch';
 
