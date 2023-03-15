@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should display 3 countries on the screen 1`] = `
+Object {
+  "countries": Object {
+    "countries": Array [
+      Object {
+        "area": 1221037,
+        "capital": Array [
+          "Pretoria",
+          "Bloemfontein",
+          "Cape Town",
+        ],
+        "continents": Array [
+          "Africa",
+        ],
+        "currency": "South African rand (R)",
+        "flag": "https://flagcdn.com/w320/za.png",
+        "languages": "Afrikaans,English,Southern Ndebele,Northern Sotho,Southern Sotho,Swazi,Tswana,Tsonga,Venda,Xhosa,Zulu",
+        "latlong": "-29 , 24",
+        "name": "South Africa",
+        "official": "Republic of South Africa",
+        "population": 59308690,
+        "region": "Africa",
+        "subregion": "Southern Africa",
+        "tld": ".za",
+        "views": 0,
+      },
+      Object {
+        "area": 21,
+        "capital": Array [
+          "Yaren",
+        ],
+        "continents": Array [
+          "Oceania",
+        ],
+        "currency": "Australian dollar ($)",
+        "flag": "https://flagcdn.com/w320/nr.png",
+        "languages": "English,Nauru",
+        "latlong": "-0.53333333 , 166.91666666",
+        "name": "Nauru",
+        "official": "Republic of Nauru",
+        "population": 10834,
+        "region": "Oceania",
+        "subregion": "Micronesia",
+        "tld": ".nr",
+        "views": 0,
+      },
+      Object {
+        "area": 54,
+        "capital": Array [
+          "Hamilton",
+        ],
+        "continents": Array [
+          "North America",
+        ],
+        "currency": "Bermudian dollar ($)",
+        "flag": "https://flagcdn.com/w320/bm.png",
+        "languages": "English",
+        "latlong": "32.33333333 , -64.75",
+        "name": "Bermuda",
+        "official": "Bermuda",
+        "population": 63903,
+        "region": "Americas",
+        "subregion": "North America",
+        "tld": ".bm",
+        "views": 0,
+      },
+    ],
+  },
+}
+`;
