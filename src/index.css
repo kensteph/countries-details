@@ -7,7 +7,7 @@
 }
 
 :root {
-  --bg--color: rgb(232, 80, 130);
+  --bg--color: #e43d80;
   --light-dark-bg: rgba(5, 4, 4, 0.26);
 }
 
@@ -53,6 +53,7 @@ a {
 }
 
 .title {
+  font-size: 1.2rem;
   color: rgb(193, 180, 180);
   font-weight: 500;
 }
@@ -178,13 +179,10 @@ input::placeholder {
   color: white;
 }
 
-.countryDetails {
-  overflow-y: scroll;
-}
-
 .rowDetail {
   display: flex;
   justify-content: space-between;
+  gap: 1rem;
   padding: 1rem;
 }
 
@@ -207,6 +205,12 @@ input::placeholder {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .title {
+    font-size: 2rem;
+    color: rgb(193, 180, 180);
+    font-weight: 500;
   }
 
   /* ======================= SEARCH COMPONENT ======================= */
@@ -248,7 +252,7 @@ input::placeholder {
 
   .countryCardDetails {
     position: relative;
-    width: 30%;
+    width: 10%;
     display: flex;
     flex-direction: row;
   }
@@ -258,5 +262,20 @@ input::placeholder {
     height: 15rem;
     -webkit-filter: grayscale(95%);
     filter: grayscale(95%);
+  }
+
+  /* DETAILS PAGE */
+  .detailsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .countryDetails {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
   }
 }
