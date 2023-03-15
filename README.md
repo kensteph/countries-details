@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 ## Screenshots
-<div style="display: flex;gap:3px;">
+<div style="display: flex;gap:3px; align-items:center;">
 
 <div style="display: flex flex-direction:column">
 
@@ -93,7 +93,7 @@
 
 > Here you can visit my live demo :
 
-- [NA]()
+- [Countries Details](https://countries-details.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -103,7 +103,7 @@
 
 > Here you can see our presentation :
 
-- [NA]()
+- [Presentation](https://www.loom.com/share/16aacd1940f8481a9529bd64f4efdebf)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

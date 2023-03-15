@@ -79,7 +79,6 @@ const countrySlice = createSlice({
             views: 0,
             tld: tldd,
           };
-          console.log(countryObj);
           cList.push(countryObj);
         });
 
