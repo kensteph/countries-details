@@ -68,8 +68,7 @@
     <li><a href="https://webpack.js.org/guides/getting-started/#basic-setup">Webpack Server</a></li>
     <li>APIs
     <ul>
-    <li><a href="https://api.spacexdata.com/v4/rockets">Rockets</a></li>
-    <li><a href="https://api.spacexdata.com/v3/missions">Missions</a></li>
+    <li><a href="https://restcountries.com/v3.1/all">Restcountries API</a></li>
     </ul>
     </li>
   </ul>
